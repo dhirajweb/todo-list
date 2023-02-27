@@ -1,0 +1,134 @@
+/* reset css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1A1A1A;
+    height: 100vh;
+}
+
+.add-todo-container {
+    position: relative;
+    height: 200px;
+    background: #0D0D0D;
+}
+
+.add-todo-input-container {
+    position: absolute;
+    top: 92%;
+    left: calc(50% - 700px/2);
+    width: 700px;
+    display: flex;
+    gap: 8px;
+}
+
+.add-todo-input {
+    background: #262626;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #808080;
+    width: 90%;
+}
+
+.add-todo-input:focus-visible {
+    outline: none;
+}
+
+.add-todo-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: #1E6F9F;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-todo-btn:disabled {
+    opacity: .5;
+    cursor: default;
+}
+
+.logo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo-to-text {
+    color: #4EA8DE;
+}
+
+.logo-do-text {
+    color: #5E60CE;
+}
+
+.logo-icon {
+    color: #8d8d8d;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
+.todo-list {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #262626;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.todo-title {
+    display: inline-block;
+}
+
+.todo-checkbox {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.task-statistics {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-tasks-title {
+    color: #4EA8DE;
+}
+
+.total-tasks-count, .completed-tasks-count {
+    background: #333333;
+    padding: 1px 3px;
+    border-radius: 75px;
+    color: #d9d9d9;
+    margin-left: 5px;
+}
+
+.completed-tasks-title {
+    color: #8284FA;
+}
+
+.remove-icon {
+    cursor: pointer;
+}
+
+.remove-icon-btn {
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+}
