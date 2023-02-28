@@ -1,7 +1,7 @@
 const initialState = [];
 
 const todo = (state = initialState, action) => {
-  console.log("inside reducer", action);
+  let copy = [...state];
   switch (action.type) {
     case "ADD":
       return [
@@ -12,11 +12,17 @@ const todo = (state = initialState, action) => {
         },
       ];
     case "REMOVE":
-      const filtered = state.filter((val, i) => {
+      copy = copy.filter((val, i) => {
         return i !== action.payload;
       });
-      console.log(filtered, "filtered");
-      return filtered;
+      return copy;
+    case "MARK_COMPLETE":
+      if (action.payload.action === "check") {
+        copy[action.payload.index].status = "complete";
+      } else {
+        copy[action.payload.index].status = "pending";
+      }
+      return copy;
     default:
       return state;
   }

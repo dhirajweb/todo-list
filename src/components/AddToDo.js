@@ -10,7 +10,8 @@ const AddToDo = () => {
     setNewToDoText(e.target.value);
   };
 
-  const handleAddToDo = () => {
+  const handleAddToDo = (e) => {
+    e.preventDefault();
     dispatch(addToDo(newToDoText));
     setNewToDoText("");
   };
@@ -22,7 +23,7 @@ const AddToDo = () => {
         <span className="logo-to-text">to</span>
         <span className="logo-do-text">do</span>
       </h1>
-      <div className="add-todo-input-container">
+      <form className="add-todo-input-container" onSubmit={handleAddToDo}>
         <input
           className="add-todo-input"
           type="text"
@@ -31,13 +32,13 @@ const AddToDo = () => {
           placeholder="Enter todo here..."
         />
         <button
+          type="submit"
           className="add-todo-btn"
-          onClick={handleAddToDo}
           disabled={!newToDoText.trim()}
         >
           Create
         </button>
-      </div>
+      </form>
     </div>
   );
 };
